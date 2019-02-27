@@ -1,5 +1,7 @@
 This is the web app for employeement dashboard buitl using angular-cli, bootstrap, HTMl,CSS.
 
+Employees can be filtered on basis of names and title.
+
 For running the web app clone the folder repo and run "ng serve --open " in the project directoy in terminal.
 
 #Reviewing Main files (used for development and coding)
