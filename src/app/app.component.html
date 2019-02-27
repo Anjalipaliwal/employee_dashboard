@@ -1,0 +1,92 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<html>
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+      <div class="logo"><p class="front">Dash</p><p class="back">Board</p></div>
+      </div>
+      <div class="col-sm-6">
+          <nav class="navbar navbar-expand-lg  float-right">
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Pricing</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+    </div>
+    </div>
+    </div>
+  </header>
+  <body>
+    <section  class="intro-dashboard">
+      <div class="container">
+        <div class="row">
+      <div class="col-sm-6">  
+          <h1 class="heading">
+              Welcome to {{ title }}
+            </h1> 
+            <p>
+              This is the dashboard for organisations which has the list of employees with their names,location,title,birthdays,phonelists and company names.
+            </p>
+        </div>  
+        <div class="col-sm-6">
+        <img src="https://www.survaider.com/homepage/img/actions.png">
+        </div>
+        </div>
+      </div> 
+    </section>
+     <section class="list">
+      <div class="title-area">
+        <h2>Lists of Employees</h2>
+        <p>
+          Filter Feature
+        </p>
+      </div>
+      <div class="container filter-area">
+        <div class="row">
+      <div class="col-sm-6">
+        <label>Filter by name</label>
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  ">
+      </div>
+      <div class="col-sm-6">
+        <label>Filter by name</label>
+        <input class="form-control" type="text" title="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  ">
+      </div>
+      </div>
+      </div>
+  
+      <table *ngIf="Emps">
+          <!-- ADD HEADERS -->
+          <tr>
+              <th>ID</th>
+                  <th>Name of Employee</th>
+                      <th>Location of Employee</th>
+                      <th>Title of Employee</th>
+          </tr>
+  
+          <!-- BIND ARRAY TO TABLE -->
+          <tr *ngFor="let emp of Emps | grdFilter: {name: searchText, title:searchText,  blog: searchText}; let i=index;">
+              <td>{{emp._id}}</td>
+                  <td>{{emp.name}}</td>
+                      <td>{{emp.location}}</td>
+                      <td>{{emp.title}}</td>
+          </tr>
+          
+      </table>
+     </section>
+    
+  </body>
+  </html>
