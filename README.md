@@ -1,3 +1,9 @@
+This is the web app for employeement dashboard buitl using angular-cli, bootstrap, HTMl,CSS.
+
+For running the web app clone the folder repo and run "ng serve --open " in the project directoy in terminal.
+
+
+
 # MyApp1
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
